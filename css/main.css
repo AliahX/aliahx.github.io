@@ -1,0 +1,149 @@
+:root {
+  --ax-pink: rgb(232, 58, 166);
+  --ax-grape: rgb(158, 44, 192);
+  --ax-violet: rgb(92, 36, 220);
+  --ax-primary: var(--ax-pink);
+  --ax-secondary: var(--ax-grape);
+  --ax-tertiary: var(--ax-violet);
+  --ax-text: #fff;
+  --ax-background: #111;
+  --ax-module-background: #222;
+  --ax-module-link: rgba(255, 255, 255, 0.55);
+  --ax-module-link-hover: rgba(255, 255, 255, 0.75);
+
+  background-color: var(--ax-module-background);
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(0deg, var(--ax-background) 50%, var(--ax-module-background) 50%);
+}
+
+body {
+  background-color: var(--ax-background);
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  color: var(--ax-text);
+}
+
+.module {
+  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1 1 1 1;
+  border-style: solid;
+  border-width: 0 0 3px 0;
+  background: var(--ax-module-background);
+  padding: 0 5%;
+}
+
+
+header {
+  display: flex;
+  min-height: 92px;
+  box-sizing: border-box;
+  column-gap: 40px;
+  height: 92px;
+  transition: height 0.15s ease-in-out;
+}
+
+header div {
+  display: flex;
+  width: 50%;
+}
+
+.logo {
+  font-weight: normal;
+  color: var(--ax-text);
+}
+
+.logo-wrapper {
+  text-decoration: none;
+  align-self: center;
+  outline: none;
+}
+
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: initial;
+  flex-grow: 0.7;
+  padding-top: 12px;
+}
+
+nav li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--ax-module-link);
+  text-decoration: none;
+  transition: color .15s ease-in-out;
+  font-weight: 600;
+}
+
+nav a.active {
+  color: var(--ax-text);
+}
+
+nav a:not(.active):hover {
+  color: var(--ax-module-link-hover);
+}
+
+nav a:hover:disabled {
+  color: var(--ff-link);
+}
+
+.navlink {
+  flex-flow: column;
+  justify-content: center;
+  padding: 8px 16px;
+  min-width: fit-content;
+}
+
+section {
+  padding: 60px 0 60px 0;
+  background-color: var(--ax-background);
+  text-align: center;
+  max-width: 55.938vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+h1:not(.logo) {
+  font-size: calc(150% + 3vw);
+  background-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  font-weight: 700;
+}
+
+@keyframes rainbow {
+  0%   {background-color: var(--ax-primary);}
+  50%  {background-color: var(--ax-secondary);}
+  100% {background-color: var(--ax-tertiary);}
+}
+
+
+::selection, ::-moz-selection {
+  background-color: rgb(158, 44, 192);
+  background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  animation: rainbow 4s linear 0s infinite alternate;
+}
