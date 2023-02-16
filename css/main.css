@@ -44,7 +44,13 @@ header {
 
 header div {
   display: flex;
-  width: 50%;
+  justify-content: space-between;
+  height: 89px;
+  width: 100%;
+}
+
+header.small div {
+  width: 100%;
 }
 
 .logo {
@@ -58,7 +64,7 @@ header div {
   outline: none;
 }
 
-nav {
+.nav {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -68,13 +74,7 @@ nav {
   padding-top: 12px;
 }
 
-nav li {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-nav ul {
+.nav-ul {
   display: flex;
   width: 100%;
   flex-flow: row;
@@ -84,23 +84,35 @@ nav ul {
   list-style: none;
 }
 
-nav a {
+.nav-ul:not(.small .nav.dropdowndisplay .nav-ul) {
+  height: 40px;
+}
+
+.nav-a {
   color: var(--ax-module-link);
   text-decoration: none;
   transition: color .15s ease-in-out;
   font-weight: 600;
 }
 
-nav a.active {
+.nav-a.active {
   color: var(--ax-text);
 }
 
-nav a:not(.active):hover {
+.nav-a.active:hover {
+  color: var(--ax-text);
+}
+
+.nav-a:hover {
   color: var(--ax-module-link-hover);
 }
 
-nav a:hover:disabled {
-  color: var(--ff-link);
+.nav-a:hover:disabled {
+  color: var(--ax-module-link);
+}
+
+.navlink.spacer {
+  padding: 4px;
 }
 
 .navlink {
@@ -108,6 +120,150 @@ nav a:hover:disabled {
   justify-content: center;
   padding: 8px 16px;
   min-width: fit-content;
+}
+
+@media (max-width: 1002px) {
+  .nav:not(.dropdowndisplay) {
+    display: none;
+  }
+}
+
+header.dropdowndisplay.small .nav.dropdowndisplay {
+  flex-flow: column wrap;
+}
+
+header.dropdowndisplay.small .nav.dropdowndisplay .nav-ul {
+  flex-flow: column;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+header.dropdowndisplay.small {
+  flex-flow: column wrap;
+  height: calc(36px * 5 + 120px);
+  overflow-y: hidden;
+}
+
+header.small {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  overflow-x: hidden;
+}
+
+body.small {
+  margin-top: 92px;
+  height: calc(100vh - 92px);
+}
+
+@media (min-width: 1002px) {
+  .shrink {
+    display: none;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown hr {
+  display: none;
+}
+
+.dropdown.expanded hr, hr {
+  border: 0;
+  display: block;
+  width: 90%;
+  min-height: 2px;
+  margin: 0px auto;
+  background-image: linear-gradient(135deg, var(--ff-aqua) 0%, var(--ff-blue) 50%, var(--ff-purple) 100%);
+}
+
+.dropdown button {
+  cursor: pointer;
+  color: var(--ax-module-link);
+  transition: color .15s ease-in-out;
+  outline: none;
+  display: flex;
+  font-size: 16px;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown.expanded button i {
+  transform: rotate(180deg);
+}
+
+.dropdown.expanded button.bars i {
+  transform: rotate(90deg);
+}
+
+.dropdown button i {
+  transition: transform .15s ease-in-out;
+}
+
+.dropdown ul {
+  display: none;
+  border-radius: 4px;
+}
+
+.dropdown.expanded:not(.shrink) {
+  box-shadow: 0px 16px 20px rgb(0 0 0 / 15%);
+  border-radius: 4px 4px 0 0;
+}
+
+header.dropdowndisplay.small .nav.dropdowndisplay .nav-ul.dropdowndisplay .dropdown:not(.shrink) {
+  position: absolute;
+  margin-top: 34.73px;
+}
+
+header.dropdowndisplay.small .nav.dropdowndisplay .nav-ul.dropdowndisplay .dropdown:not(.shrink) + li{
+  margin-top: 34.73px;
+}
+
+.dropdown.expanded ul {
+  display: block;
+  padding: 4px 0 4px 0;
+  background: var(--ax-module-background);
+  border-top-left-radius: 0px;
+}
+
+nav li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown ul li a {
+  padding: 0 4px 0 4px;
+  width: 100%;
+  transition: all .15s ease-in-out;
+}
+
+.dropdown ul li a:hover {
+  width: 100%;
+  background-color: var(--ax-module-link-hover-background);
+}
+
+.bars {
+  font-size: 25px !important;
+  margin: 21px 0 21px 0;
+  border: 1px solid var(--ax-module-link);
+}
+
+.fab {
+  width: 17.5px !important;
+}
+
+nav.shrink {
+  align-self: center;
 }
 
 section {
@@ -134,16 +290,16 @@ h1:not(.logo) {
   font-weight: 700;
 }
 
-@keyframes rainbow {
-  0%   {background-color: var(--ax-primary);}
-  50%  {background-color: var(--ax-secondary);}
-  100% {background-color: var(--ax-tertiary);}
-}
-
-
-::selection, ::-moz-selection {
-  background-color: rgb(158, 44, 192);
-  background-clip: border-box;
-  -webkit-text-fill-color: initial;
-  animation: rainbow 4s linear 0s infinite alternate;
+h2 {
+  font-size: calc(100% + 2vw);
+  background-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: normal;
+  margin-block-end: calc(0.83em - 0.5vh);
 }
