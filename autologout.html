@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AliahX | Home</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i" />
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.3.0/css/pro.min.css">
+</head>
+<body>
+  <header class="module bottom">
+    <div>
+      <a href="./" class="logo-wrapper">
+        <h1 class="logo">AliahX</h1>
+      </a>
+      <nav class="shrink">
+        <i class="dropdown shrink"><button aria-label="Menu button" class="nav-a bars"><i class="fas fa-bars"></i></button></i>
+      </nav>
+    </div>
+    <nav class="nav">
+      <ul class="nav-ul">
+        <li class="navlink"><a class="nav-a" href="./">Home</a></li>
+        <li class="navlink"><a class="nav-a" href="https://fastforward.team">FastForward</a></li>
+        <li class="navlink"><a class="nav-a" href="https://github.com/AliahX/Mixtape">Mixtape</a></li>
+        <li class="navlink"><a class="nav-a" href="../valorant/index.html">Valorant</a></li>
+        <li class="navlink"><a class="nav-a" href="../pride-flag-identifier/index.html">Pride Flag Identifier</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <h1>Autologout</h1>
+    <form action="https://tanebosman.com/autologout/submit/" style="font-size: 20px">
+      <table>
+        <tr>
+          <td><span>Autologout URL </td>
+          <td><input type="text" name="url" class="btn" placeholder="https://login.syd-1.linewize.net/logout"></td>
+        </tr>
+        <tr id="name tr">
+          <td><span>Name </span></td>
+          <td><input type="text" name="name" class="btn" placeholder="john" oninput="this.value=this.value.toLowerCase().split(' ').join('');localStorage.setItem('name', this.value);"></td>
+          <td style="display: flex; padding-top: 10px;">
+            <span class="smol">Don't ask again</span>
+            <label class="btn">
+              <input type="checkbox" name="askForName">
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="padding"><hr class="gradientBorder"></td>
+        </tr>
+        <tr>
+          <td colspan="1"><a class="btn" target="_blank" href="https://autologout.linewize.net/">Open Autologout</a></td>
+          <td><a class="btn" onclick="localStorage.setItem('askForName', document.forms[0].askForName.checked);document.forms[0].submit()">Enable autologout</a></td>
+        </tr>
+      </table>
+    </form>
+  </section>
+  <script>
+    name = localStorage.getItem("name");
+    askForName = localStorage.getItem("askForName");
+    if(name != "null") {
+      document.getElementsByName("name")[0].value = name;
+      if(askForName == "true") document.getElementById("name tr").style.display = "none";
+    }
+  </script>
+  <script src="js/index.js"></script>
+  <style>
+    .btn {
+      font-size: 20px;
+    }
+
+    hr {
+      border: 2px solid;
+      border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1 1 1 1;
+    }
+
+    .padding {
+      padding-bottom: 6px;
+    }
+
+    a {
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</body>
+</html>
