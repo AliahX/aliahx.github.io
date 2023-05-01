@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AliahX | Autologout</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i" />
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.3.0/css/pro.min.css">
+</head>
+<body>
+  <header class="module bottom">
+    <div>
+      <a href="./" class="logo-wrapper"><h1 class="logo">AliahX</h1></a>
+      <nav class="shrink"><i class="dropdown shrink"><button aria-label="Menu button" class="nav-a bars"><i class="fas fa-bars"></i></button></i></nav>
+    </div>
+    <nav class="nav">
+      <ul class="nav-ul">
+        <li class="navlink"><a class="nav-a" href="./">Home</a></li>
+        <li class="navlink"><a class="nav-a" href="https://fastforward.team">FastForward</a></li>
+        <li class="navlink"><a class="nav-a" href="https://github.com/AliahX/Mixtape">Mixtape</a></li>
+        <li class="navlink"><a class="nav-a" href="../valorant/index.html">Valorant</a></li>
+        <li class="navlink"><a class="nav-a" href="../pride-flag-identifier/index.html">Pride Flag Identifier</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="margin-auto">
+    <h2>Autologout</h2>
+    <form action="https://tanebosman.com/autologout/submit/" style="font-size: 20px">
+      <table>
+        <tr>
+          <td><span>Autologout URL </td>
+          <td><input type="text" name="url" class="axInput" placeholder="https://login.syd-1.linewize.net/logout"></td>
+        </tr>
+        <tr id="name tr">
+          <td><span>Name </span></td>
+          <td style="display:flex">
+            <input type="text" name="name" class="axInput" placeholder="john" oninput="this.value=this.value.toLowerCase().split(' ').join('');localStorage.setItem('name', this.value);" style="width: 150px">
+            <span class="smol">Don't ask again</span>
+            <label class="axInput axButton">
+              <input type="checkbox" name="dontAskForName">
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr><td colspan="2"><hr></td></tr>
+        <tr>
+          <td colspan="1"><a class="axInput axButton" target="_blank" href="https://autologout.linewize.net/">Open Autologout</a></td>
+          <td><a class="axInput axButton" onclick="localStorage.setItem('dontAskForName', document.forms[0].dontAskForName.checked);document.forms[0].submit()">Enable autologout</a></td>
+        </tr>
+      </table>
+    </form>
+  </section>
+  <script src="../js/index.js"></script>
+  <script src="index.js"></script>
+  <style>
+    .axInput {
+      font-size: 20px;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  color: white;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+}
+
+span {
+  font-family: SF-Pro;
+}
+
+.backgroundImage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/background.png");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.backgroundOverlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@font-face {
+  font-family: SF-Pro;
+  src: url(SF-Pro.ttf);
+}
+
+.topBar {
+  display: flex;
+  margin-top: 8px;
+  margin-right: 18.375px;
+  float: right;
+}
+
+.battery {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  margin-right: 16.5px;
+}
+
+.battery * {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.batteryBase {
+  width: 19px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3.25px;
+  padding: 1px;
+  margin-right: 1px;
+  display: inline-block;
+}
+
+.batteryLevel {
+  background-color: #fff;
+  height: 8px;
+  border-radius: 1.5px;
+}
+
+.batteryHead {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 4px;
+  width: 1.5px;
+  margin-top: 4px;
+  display: inline-block;
+  border-radius: 0 2px 2px 0;
+}
+
+#date {
+  font-size: 13px;
+  margin-top: -1.5px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.loginBox {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: fit-content;
+  margin-top: 475px;
+}
+
+.inputBackground {
+  backdrop-filter: brightness(1.2);
+  border-radius: 25px;
+  height: 28px;
+  width: 158px;
+  position: absolute;
+  margin-left: 16px;
+}
+
+.inputBackground:not(.background1) {
+  margin-top: 38px;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  height: 26px;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 144.5px;
+  padding-left: 13.5px;
+  font-size: 13px;
+  filter: none;
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 0.6 !important;
+}
+
+.name:focus::placeholder {
+  text-align: center;
+}
+
+body:focus .name::placeholder {
+  text-align: center;
+}
+
+.name {
+  margin-bottom: 10px;
+}
+
+.password {
+  margin-bottom: 14px;
+}
+
+.touchIdMessage {
+  text-shadow: black 0 0 3px;
+  text-align: center;
+  font-size: 12.28px;
+}
+
+.overlay {
+  margin-top: -30px;
+}
+
+.powerButtons {
+  display: flex;
+  margin-top: 210px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.buttonBackground {
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 34.75px;
+  width: 34.75px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4px;
+}
+
+.buttonBackground img {
+  width: 22px;
+  height: 22.5px;
+  margin-top: 6px;
+}
+
+.powerButton {
+  text-align: center;
+  width: 66.5px;
+}
+
+.powerButtonText {
+  text-shadow: black 0 0 3px;
+  font-size: 13px;
+}
+
+#restart.powerButton {
+  margin-left: 55px;
+  margin-right: 55px;
+}
+
+#sleepBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+}
+
+.show {
+  display: block !important;
+  opacity: 1 !important;
+}

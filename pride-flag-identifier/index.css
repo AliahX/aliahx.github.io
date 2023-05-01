@@ -1,0 +1,111 @@
+.flagBox {
+  width: calc(16.6666666667% - 44px);
+}
+
+.flagName {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.flagBox svg {
+  margin: auto;
+}
+
+.createBox {
+  height: 92%;
+  display: flex;
+}
+
+.colorButton {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 37.5%;
+  transition: all 0.1s ease-out;
+}
+
+.colorButton:hover:not(.active) {
+  margin: 4px;
+  width: 22px;
+  height: 22px;
+}
+
+.colorButton.active {
+  margin: 1px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+#colorBox {
+  max-width: 155px;
+}
+
+.flagOptions {
+  width: fit-content;
+}
+
+#drawFlag > * {
+  cursor: pointer;
+}
+
+
+
+@media(max-width:1200px) {
+  .flagBox {
+    width: calc(20% - 44px);
+  }
+}
+
+@media(max-width:1000px) {
+  .flagBox {
+    width: calc(25% - 44px);
+  }
+}
+
+@media(max-width:800px) {
+  .flagBox {
+    width: calc(33.33% - 44px);
+  }
+}
+
+@media(max-width:550px) {
+  .flagBox {
+    width: calc(50% - 44px);
+  }
+}
+
+@media(max-width:400px) {
+  .flagName {
+    font-size: 14px;
+  }
+}
+
+@media(max-width:350px) {
+  .contentWrapper {
+    
+  }
+}
+
+button i {
+  padding-left: 4.083345px;
+  padding-right: 4.083345px;
+}
+
+button:disabled {
+  color: #8C8273;
+  cursor: default;
+}
+
+.flagDesc:not(.flagDescTall) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+section {
+  padding: 30px 0 0 0;
+}

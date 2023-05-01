@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AliahX | Pride Flag Identifier</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i" />
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.3.0/css/pro.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="flagStyles.js" charset="utf-8"></script>
+  <script src="flagColors.js" charset="utf-8"></script>
+  <script src="flags.js" charset="utf-8"></script>
+  <script src="index.js" charset="utf-8"></script>
+</head>
+<body>
+  <header class="module bottom">
+    <div>
+      <a href="./" class="logo-wrapper">
+        <h1 class="logo">AliahX</h1>
+      </a>
+      <nav class="shrink">
+        <i class="dropdown shrink"><button aria-label="Menu button" class="nav-a bars"><i class="fas fa-bars"></i></button></i>
+      </nav>
+    </div>
+    <nav class="nav">
+      <ul class="nav-ul">
+        <li class="navlink"><a class="nav-a" href="../">Home</a></li>
+        <li class="navlink"><a class="nav-a" href="https://fastforward.team">FastForward</a></li>
+        <li class="navlink"><a class="nav-a" href="https://github.com/AliahX/Mixtape">Mixtape</a></li>
+        <li class="navlink"><a class="nav-a" href="../valorant/index.html">Valorant</a></li>
+        <li class="navlink"><a class="nav-a" href="../pride-flag-identifier/index.html">Pride Flag Identifier</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <h2>Pride Flag Identifier</h2>
+    <div class="topbar">
+      <div class="homeButton pageButton" onclick="setPage(0);" title="Home">
+        <i class="fas fa-home"></i>
+      </div>
+      <div class="identifyFlagButton pageButton" onclick="setPage(1);" title="Identify flag">
+        <i class="fa fa-brush"></i>
+      </div>
+      <div class="showAllFlagsButton pageButton" onclick="setPage(2);" title="Show all flags">
+        <i class="fas fa-eye"></i>
+      </div>
+      <div class="axInput search">
+        <i class="fas fa-search"></i>
+        <input type="text" class="searchInput" placeholder="Search..." oninput="search(this);">
+      </div>
+    </div>
+    <div id="mainBox" class="contentWrapper">
+      <div class="contentBox fullWidth">
+        <h3>Welcome to Pride Flag Identifier!</h3>
+        <p>This website is a tool to help you identify pride flags. You can either identify a flag by drawing it, or by searching for it.</p>
+        <p>Click on the buttons above to get started!</p>
+        <p>This site is not compatible with the dark reader extension.</p>
+      </div>
+    </div>
+    <div id="createBox" class="contentWrapper">
+      <div class="contentBox fullWidth createBox">
+        <svg id="drawFlag" version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="flagOptions">
+          <select class="axInput" id="flagStyle" oninput="setFlagStyle(this)"></select>
+          <div id="colorBox"></div>
+          <input class="axInput axButton" type="button" value="Copy Flag Data" onclick="copyFlagData(this)">
+        </div>
+      </div>
+    </div>
+    <div id="allBox" class="contentWrapper"></div>
+  </section>
+  <script src="../js/index.js"></script>
+</body>
+</html>

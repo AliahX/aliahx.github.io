@@ -36,7 +36,6 @@ function closeDropdowns(both) {
     document.querySelector(".nav-ul").classList.remove("dropdowndisplay");
     document.querySelector(".nav").classList.remove("dropdowndisplay");
     document.querySelector("i.dropdown button").parentElement.classList.remove("expanded");
-    // document.querySelector("li.dropdown button").parentElement.classList.remove("expanded");
   } else {
     document.querySelector("li.dropdown button").parentElement.classList.remove("expanded");
   }

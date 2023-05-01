@@ -22,12 +22,12 @@ body {
   padding: 0px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 92px);
   color: var(--ax-text);
 }
 
 .module {
-  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1 1 1 1;
+  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1;
   border-style: solid;
   border-width: 0 0 3px 0;
   background: var(--ax-module-background);
@@ -185,7 +185,6 @@ body.small {
 }
 
 .dropdown button {
-  cursor: pointer;
   color: var(--ax-module-link);
   transition: color .15s ease-in-out;
   outline: none;
@@ -269,12 +268,10 @@ nav.shrink {
 }
 
 section {
-  padding: 60px 0 60px 0;
+  /* padding: 60px 0 60px 0; */
+  padding: 60px 0 0 0;
   background-color: var(--ax-background);
   text-align: center;
-  /* max-width: 55.938vw; */
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -293,7 +290,7 @@ h1:not(.logo) {
 }
 
 h2 {
-  font-size: calc(100% + 2vw);
+  font-size: calc(2.03vh + 2vw);
   background-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -304,6 +301,11 @@ h2 {
   margin-right: auto;
   font-weight: normal;
   margin-block-end: calc(0.83em - 0.5vh);
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content-warning {
@@ -320,7 +322,7 @@ h2 {
   height: 10%;
   margin: auto;
   background-color: var(--ax-background);
-  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1 1 1 1;
+  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1;
   border-style: solid;
   padding: 20px;
   width: 180px;
@@ -328,7 +330,7 @@ h2 {
   margin-top: calc(50vh - 95px);
 }
 
-.btn {
+.axInput {
   border: 2px solid;
   border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1;
   border-radius: .3rem;
@@ -346,16 +348,17 @@ h2 {
   color: var(--ax-secondary);
 }
 
-input[type=checkbox] {
+.axButton {
   cursor: pointer;
+  user-select: none;
 }
 
-label.btn {
+label.axInput {
   display: block;
   position: relative;
   padding: 0px;
   margin-bottom: 12px;
-  cursor: pointer;
+  margin-top: 12px;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -367,21 +370,21 @@ label.btn {
   background-image: none;
 }
 
-label.btn input {
+label.axInput input {
   display: none;
 }
 
-label.btn:hover {
+label.axInput:hover {
   background-color: var(--ax-module-background);
 }
 
-label.btn .checkmark:after {
+label.axInput .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-label.btn input:checked ~ .checkmark:after {
+label.axInput input:checked ~ .checkmark:after {
   display: block;
   left: 5px;
   top: 2.4px;
@@ -399,7 +402,7 @@ label.btn input:checked ~ .checkmark:after {
   font-size: 12px;
   color: var(--ax-module-link);
   line-height: 2.2;
-  margin-right: 8px;
+  margin: 8px;
 }
 
 .content-warning div ul {
@@ -436,10 +439,91 @@ label.btn input:checked ~ .checkmark:after {
   border: none;
 }
 
-button, input[type=button], input[type=submit] {
+a {
+  color: var(--ax-primary);
+}
+
+hr:not(.dropdown hr) {
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1;
+}
+
+.topbar {
+  margin: 10px;
+  width: calc(100vw - 24px);
+  background-color: var(--ax-module-background);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1;
+}
+
+.pageButton {
+  display: inline-block;
+  margin: 15px;
+}
+
+.pageButton:not(:first-of-type) {
+  margin-left: 0px;
+}
+
+.pageButton i {
+  cursor: pointer;
+  background-color: var(--ax-primary);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.showAllFlagsButton, .identifyFlagButton {
+  margin-left: 0px;
+}
+
+.search {
+  display: inline-block;
+  height: 20px;
+  padding: 5px;
+  padding-left: 7px;
+  width: calc(100% - 148.6px - 12px);
+}
+
+.searchInput {
+  height: 16px;
+  border: none;
+  outline: none;
+  width: calc(100% - 25px);
+  background-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%);
+  background-clip: text;
+}
+
+.contentWrapper {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: calc(100vh - 208px - 0.83em + 0.5vh - (1.25 * (2.03vh + 2.1vw)));
+}
+
+.contentBox {
+  display: inline-grid;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--ax-module-background);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--ax-primary) 0%, var(--ax-secondary) 50%, var(--ax-tertiary) 100%) 1;
+  transition: all 0.1s ease-out;
+  overflow-x: clip;
+}
+
+.contentBox.fullWidth {
+  width: calc(100vw - 34px);
+}
+
+.contentBox.hover {
   cursor: pointer;
 }
 
-a {
-  color: var(--ax-primary);
+.contentBox.hover:hover {
+  margin: 6px;
+  padding: 14px;
+}
+
+* {
+  scrollbar-width: none;
 }

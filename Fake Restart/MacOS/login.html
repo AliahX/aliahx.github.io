@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+    <title>MacOS Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link id="favicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='.06em' y='.82em' font-size='110'></text></svg>">
+  </head>
+  <body>
+    <div class="backgroundImage"></div>
+    <div class="backgroundOverlay">
+      <div class="topBar">
+        <div class="battery"><div class="batteryBase"><div class="batteryLevel"></div></div><div class="batteryHead"></div></div>
+        <span id="date"></span>
+      </div>
+      <div class="loginBox">
+        <div class="inputBackground background1"></div><div class="inputBackground"></div>
+        <form autocomplete="off"><input type="text" placeholder="Name                              " class="name" autocomplete="off"><br><input type="Password" placeholder="Enter Password" class="password"></form>
+        <div class="touchIdMessage">
+          <span>Touch ID requires your password</span><br>
+          <span>when Mac restarts</span>
+        </div>
+        <div class="touchIdMessage overlay">
+          <span>Touch ID requires your password</span><br>
+          <span>when Mac restarts</span>
+        </div>
+      </div>
+      <div class="powerButtons">
+        <div id="shutDown" class="powerButton">
+          <div class="buttonBackground"><img src="img/Shut Down.png"></div><span class="powerButtonText">Shut Down</span>
+        </div>
+        <div id="restart" class="powerButton">
+          <div class="buttonBackground"><img src="img/Restart.png"></div><span class="powerButtonText">Restart</span>
+        </div>
+        <div id="sleep" class="powerButton">
+          <div class="buttonBackground"><img src="img/Sleep.png"></div><span class="powerButtonText">Sleep</span>
+        </div>
+      </div>
+    </div>
+    <div id="sleepBox"></div>
+    <script src="js/login.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,60 @@
+body {
+  background-color: black;
+  height: 100vh;
+  margin: 0;
+}
+
+*, html, body {
+  cursor: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#logo {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: calc(50% - 5vh);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#progressBar {
+  position: absolute;
+  height: 6.5px;
+  top: 66.315%;
+  width: 18.3%;
+  left: 40.85%;
+  overflow: hidden;
+  border-radius: 25px;
+
+  opacity: 0;
+  animation: appear 0.5s linear 1s;
+  animation-fill-mode: forwards;
+}
+
+#progressBackground {
+  position: absolute;
+  height: 4.5px;
+  width: calc(100% - 2px);
+  border-radius: 25px;
+  background-color: rgb(38, 38, 38);
+  border: 1px solid rgb(61, 61, 61);
+}
+
+#progress {
+  position: absolute;
+  height: 4.5px;
+  width: 0%;
+  background-color: rgb(211, 211, 211);
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 25px 0 0 25px;
+}
